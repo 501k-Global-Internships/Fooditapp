@@ -8,7 +8,7 @@ export default function Cartnav() {
   const { cartCount } = useCart();
 
   return (
-    <nav className={`navbar bg-opacity-50 backdrop-blur-md px-20 flex flex-row justify-between items-center `}>
+    <nav className={`navbar bg-opacity-50 backdrop-blur-md px-[120px] flex flex-row justify-between items-center `}>
       <img src={logo} alt="Logo" className='w-[206px] h-[47px]' />
       <ul className={`flex flex-row  bg-[#1A1A1A26] text-white justify-evenly w-[410px] h-[53px] rounded-[26px] items-center font-mont`}>
         <NavLink to='' className={`hover:border-[1px] text-white`}>Home</NavLink>

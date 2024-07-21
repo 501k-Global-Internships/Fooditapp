@@ -4,10 +4,13 @@ import CHOICENAV from '../layouts/navbar/choicenav';
 import TOPFOODS from '../components /topfood';
 import { useCart } from '../Context/CartContext';
 import food from '../assests/food.svg'
+import { FaStar } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa";
+
 
 
 const foodItems = new Array(15).fill({
-  address: '123 Main St',
+  address: '4.9 [2k Review]',
   imageUrl: food, 
   price: '#15,000',
   name: 'DELE CANTEEN',
@@ -50,11 +53,11 @@ export default function Supriseme() {
             {foodItems.map((item, index) => (
               <div
                 key={index}
-                className='w-[338px] h-[460px] overflow-hidden flex flex-col justify-center items-center mb-10'
+                className='w-[338px] h-[550px] overflow-hidden flex flex-col justify-center items-center mb-10'
               >
                 <div className='flex flex-col justify-center items-center'>
-                  <p className='text-[#6E6B65] text-center font-mont font-normal text-[14px] relative top-14 rounded-[17px] w-[112px] h-[23px] bg-white place-content-center'>
-                    {item.address}
+                  <p className='text-[#6E6B65] text-center font-mont font-normal text-[12px] relative top-14 rounded-[17px] w-[112px] h-[23px] bg-white place-content-center flex flex-row items-center'>
+                  <FaStar className='w-[13px] h-[13px] text-[#F08F00]'/>{item.address}
                   </p>
                   <img
                     src={item.imageUrl}
@@ -79,7 +82,7 @@ export default function Supriseme() {
                   {item.description}
                 </p>
 
-                <button onClick={handleAddToCart} className='bg-[#F08F00] w-[161px] h-[48px] text-white font-mont font-medium text-[18px] mb-7 rounded-[23px]'>
+                <button onClick={handleAddToCart} className='bg-[#F08F00] w-[161px] h-[48px] text-white font-mont font-medium text-[18px] mb-7 rounded-[23px] flex flex-row items-center gap-1 place-content-center'><FaPlus className=''/>
                   ADD TO CART
                 </button>
               </div>

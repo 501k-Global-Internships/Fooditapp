@@ -10,6 +10,9 @@ import { Navigation } from 'swiper/modules';
 import { IoSearchSharp } from "react-icons/io5";
 import { useCart } from '../Context/CartContext';
 import food from '../assests/food.svg'
+import { FaStar } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa";
+
 
 export default function TopFood() {
 
@@ -25,15 +28,15 @@ export default function TopFood() {
         location: "Lekki",
         description: "One Fufu, Peppered Beef & Ponmo",
         price: "#15,000",
-        address: "123 Main St",
+        address: "4.9 [2k Review]",
         imgSrc: food
     }));
 
     const renderItems = (slideIndex) => (
         items.slice(slideIndex * 3, (slideIndex + 1) * 3).map((item, index) => (
-            <div key={item.id} className='w-[338px] h-[460px] overflow-hidden flex flex-col justify-center items-center mb-10'>
+            <div key={item.id} className='w-[338px] h-[550px] overflow-hidden flex flex-col justify-center items-center mb-10'>
                 <div className='flex flex-col justify-center items-center'>
-                    <p className='text-[#6E6B65] text-center font-mont font-normal text-[14px] relative top-14 rounded-[17px] w-[112px] h-[23px] bg-white place-content-center'>{item.address}</p>
+                <p className='text-[#6E6B65] text-center font-mont font-normal text-[12px] relative top-14 rounded-[17px] w-[112px] h-[23px] bg-white place-content-center flex flex-row items-center '><FaStar className='w-[13px] h-[13px] text-[#F08F00]'/>{item.address}</p>
                     <img src={item.imgSrc} alt="" className='w-[338px] h-[338px] rounded-[54px]'/>
                     <p className='text-[#6E6B65] font-mont font-bold text-center text-[22px] relative bottom-14 rounded-[17px] w-[143px] h-[46px] bg-white place-content-center'>{item.price}</p>
                 </div>
@@ -42,7 +45,7 @@ export default function TopFood() {
                     <p className='border-[1px] bg-[#D9BD8B] w-[55px] h-[27px] content-center text-center text-white font-mont font-normal text-[17px] rounded-[12px] items-center'>{item.location}</p>
                 </div>
                 <p className='font-mont font-normal text-[16px] text-[#6E6B65]'>{item.description}</p>
-                <button onClick={handleAddToCart} className='bg-[#F08F00] w-[161px] h-[48px] text-white font-mont font-medium text-[18px] mb-7 rounded-[23px]'>ADD TO CART</button>
+                <button onClick={handleAddToCart} className='bg-[#F08F00] w-[161px] h-[48px] text-white font-mont font-medium text-[18px] mb-7 rounded-[23px] flex flex-row items-center gap-1 place-content-center'><FaPlus className=''/>ADD TO CART</button>
             </div>
         ))
     );
