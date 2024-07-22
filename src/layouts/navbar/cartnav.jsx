@@ -3,7 +3,7 @@ import { BsCart4 } from 'react-icons/bs';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useCart } from '../../Context/CartContext'; 
 import logo from '../../assests/Asset 3@4x 1.svg';
-import { useNavigate } from 'react-router-dom';
+
 
 
 export default function Cartnav() {
